@@ -21,14 +21,17 @@ public class E02 {
 
         Scanner leer = new Scanner(System.in);
         Random rand = new Random();
-        int[] vector = new int[100];
-        int cont = 0;
-
+        boolean llave = false;
+        
+        System.out.print("Ingresar valor para generar un vector: ");
+        int n = leer.nextInt();
+        int[] vector = new int[n];
+        
         System.out.print("Ingresar valor a buscar en el vector: ");
         int rpta = leer.nextInt();
 
         llenarVector(rand, vector);
-        buscarVector(vector, rpta, cont);
+        buscarVector(vector, rpta, llave);
     }
 
     public static void llenarVector(Random rand, int vector[]) {
@@ -39,21 +42,21 @@ public class E02 {
 
     }
 
-    public static void buscarVector(int vector[], int rpta, int cont) {
+    public static void buscarVector(int vector[], int rpta, boolean llave) {
 
         for (int i = 1; i < 100; i++) {
             if (vector[i] == rpta) {
-                if (cont == 0) {
+                if (!llave) {
                     System.out.println("El número " + rpta + " se encuentra en la posición:");
-                    cont++;
+                    llave = true;
                 }
                 System.out.println("[" + i + "]");
             }
         }
 
-        if (cont == 0) {
+        if (!llave) {
             System.out.println("El número " + rpta + " no se encuentra en el vector.");
         }
     }
-
+    
 }
