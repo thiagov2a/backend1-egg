@@ -20,43 +20,45 @@ public class E02 {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
-        Random rand = new Random();
-        boolean llave = false;
-        
-        System.out.print("Ingresar valor para generar un vector: ");
-        int n = leer.nextInt();
-        int[] vector = new int[n];
-        
-        System.out.print("Ingresar valor a buscar en el vector: ");
-        int rpta = leer.nextInt();
 
-        llenarVector(rand, vector);
-        buscarVector(vector, rpta, llave);
+        System.out.print("Ingrese el tamaño del vector: ");
+        int tamaño = leer.nextInt();
+        int[] vector = llenarVector(tamaño);
+
+        System.out.print("Ingrese el número a buscar en el vector: ");
+        int num = leer.nextInt();
+
+        buscarNumero(vector, num);
     }
 
-    public static void llenarVector(Random rand, int vector[]) {
+    public static int[] llenarVector(int tamaño) {
+        int[] vector = new int[tamaño];
+        Random rand = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < tamaño; i++) {
             vector[i] = rand.nextInt(100);
         }
 
+        return vector;
     }
 
-    public static void buscarVector(int vector[], int rpta, boolean llave) {
+    public static void buscarNumero(int[] vector, int num) {
 
-        for (int i = 1; i < 100; i++) {
-            if (vector[i] == rpta) {
-                if (!llave) {
-                    System.out.println("El número " + rpta + " se encuentra en la posición:");
-                    llave = true;
+        boolean encontrado = false;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] == num) {
+                if (!encontrado) {
+                    System.out.println("El número " + num + " se encuentra en la posición:");
+                    encontrado = true;
                 }
                 System.out.println("[" + i + "]");
             }
         }
 
-        if (!llave) {
-            System.out.println("El número " + rpta + " no se encuentra en el vector.");
+        if (!encontrado) {
+            System.out.println("El número " + num + " no se encuentra en el vector.");
         }
     }
-    
+
 }
