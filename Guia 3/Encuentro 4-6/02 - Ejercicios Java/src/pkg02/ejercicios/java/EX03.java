@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg01.ejercicios.java;
+package pkg02.ejercicios.java;
 
 /**
- * Escribir un programa que lea un número entero por teclado y muestre por
- * pantalla el doble, el triple y la raíz cuadrada de ese número.
- *
- * Nota: investigar la función Math.sqrt().
+ * Elaborar un algoritmo en el cuál se ingrese una letra y se detecte si se
+ * trata de una vocal. Caso contrario mostrar un mensaje. Nota: investigar la
+ * función equals() de la clase String.
  *
  * @author Thiago
  */
-public class E05 {
+public class EX03 {
 
     /**
      * @param args the command line arguments

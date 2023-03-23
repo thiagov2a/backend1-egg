@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg01.ejercicios.java;
+package pkg04.ejercicios.java;
 
 /**
- * Escribir un programa que lea un número entero por teclado y muestre por
- * pantalla el doble, el triple y la raíz cuadrada de ese número.
- *
- * Nota: investigar la función Math.sqrt().
+ * Realizar un programa que rellene un matriz de 4 x 4 de valores aleatorios y
+ * muestre la traspuesta de la matriz. La matriz traspuesta de una matriz A se
+ * denota por B y se obtiene cambiando sus filas por columnas (o viceversa).
  *
  * @author Thiago
  */
-public class E05 {
+public class E04 {
 
     /**
      * @param args the command line arguments

@@ -8,6 +8,8 @@ package pkg02.ejercicios.java;
 import java.util.Scanner;
 
 /**
+ * Leer la altura de N personas y determinar el promedio de estaturas que se
+ * encuentran por debajo de 1.60 mts. y el promedio de estaturas en general.
  *
  * @author Thiago
  */
@@ -45,5 +47,5 @@ public class EX06 {
 
         sc.close();
     }
-    
+
 }

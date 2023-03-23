@@ -8,6 +8,12 @@ package pkg04.ejercicios.java;
 import java.util.Scanner;
 
 /**
+ * Crea un vector llamado ‘Equipo’ cuya dimensión sea la cantidad de compañeros
+ * de equipo y define su tipo de dato de tal manera que te permita alojar sus
+ * nombres más adelante.
+ *
+ * Utilizando un Bucle for, aloja en el vector Equipo, los nombres de tus
+ * compañeros de equipo
  *
  * @author Thiago
  */

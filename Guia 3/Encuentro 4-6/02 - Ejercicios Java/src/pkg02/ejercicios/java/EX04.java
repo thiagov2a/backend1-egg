@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg01.ejercicios.java;
+package pkg02.ejercicios.java;
 
 /**
- * Escribir un programa que lea un número entero por teclado y muestre por
- * pantalla el doble, el triple y la raíz cuadrada de ese número.
- *
- * Nota: investigar la función Math.sqrt().
+ * Elaborar un algoritmo en el cuál se ingrese un número entre 1 y 10 y se
+ * muestre su equivalente en romano.
  *
  * @author Thiago
  */
-public class E05 {
+public class EX04 {
 
     /**
      * @param args the command line arguments

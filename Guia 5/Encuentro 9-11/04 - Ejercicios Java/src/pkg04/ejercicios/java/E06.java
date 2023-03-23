@@ -8,6 +8,11 @@ package pkg04.ejercicios.java;
 import java.util.Scanner;
 
 /**
+ * Un cuadrado mágico 3 x 3 es una matriz 3 x 3 formada por números del 1 al 9
+ * donde la suma de sus filas, sus columnas y sus diagonales son idénticas.
+ * Crear un programa que permita introducir un cuadrado por teclado y determine
+ * si este cuadrado es mágico o no. El programa deberá comprobar que los números
+ * introducidos son correctos, es decir, están entre el 1 y el 9.
  *
  * @author Thiago
  */
@@ -61,7 +66,7 @@ public class E06 {
             if (filas != 15 || colum != 15) {
                 mostrarMatriz(matriz);
                 System.out.println("La matriz no es mágica.");
-                return;
+                return; //El return se usa como un System.exit(0). Tambien podemos aplicar un boolean.
             }
         }
 

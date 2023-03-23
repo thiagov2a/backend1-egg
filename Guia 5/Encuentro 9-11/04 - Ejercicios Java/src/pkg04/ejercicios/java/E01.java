@@ -6,6 +6,8 @@
 package pkg04.ejercicios.java;
 
 /**
+ * Realizar un algoritmo que llene un vector con los 100 primeros números
+ * enteros y los muestre por pantalla en orden descendente.
  *
  * @author Thiago
  */

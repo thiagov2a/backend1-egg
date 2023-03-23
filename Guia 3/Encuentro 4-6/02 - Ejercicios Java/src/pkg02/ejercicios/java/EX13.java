@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg01.ejercicios.java;
+package pkg02.ejercicios.java;
 
 /**
- * Escribir un programa que lea un número entero por teclado y muestre por
- * pantalla el doble, el triple y la raíz cuadrada de ese número.
- *
- * Nota: investigar la función Math.sqrt().
+ * Crear un programa que dibuje una escalera de números, donde cada línea de
+ * números comience en uno y termine en el número de la línea. Solicitar la
+ * altura de la escalera al usuario al comenzar. Ejemplo: si se ingresa el
+ * número 3: 
+ * 1 
+ * 12 
+ * 123
  *
  * @author Thiago
  */
-public class E05 {
+public class EX13 {
 
     /**
      * @param args the command line arguments

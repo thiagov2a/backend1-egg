@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg01.ejercicios.java;
+package pkg02.ejercicios.java;
 
 /**
- * Escribir un programa que lea un número entero por teclado y muestre por
- * pantalla el doble, el triple y la raíz cuadrada de ese número.
- *
- * Nota: investigar la función Math.sqrt().
+ * Se dispone de un conjunto de N familias, cada una de las cuales tiene una M
+ * cantidad de hijos. Escriba un programa que pida la cantidad de familias y
+ * para cada familia la cantidad de hijos para averiguar la media de edad de los
+ * hijos de todas las familias.
  *
  * @author Thiago
  */
-public class E05 {
+public class EX14 {
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,8 @@
 package pkg01.ejercicios.java;
 
 /**
+ * Dada una cantidad de grados centígrados se debe mostrar su equivalente en
+ * grados Fahrenheit. La fórmula correspondiente es: F = 32 + (9 * C / 5).
  *
  * @author Thiago
  */
@@ -17,5 +19,5 @@ public class E04 {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+
 }
