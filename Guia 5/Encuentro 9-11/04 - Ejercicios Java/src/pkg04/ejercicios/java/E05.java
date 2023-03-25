@@ -50,7 +50,7 @@ public class E05 {
                 traspuesta[i][j] = -matriz[j][i];
             }
         }
-        
+
         System.out.println("Matriz A:");
         mostrarMatriz(matriz);
         System.out.println("Matriz AT:");

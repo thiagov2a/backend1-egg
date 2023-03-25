@@ -19,33 +19,39 @@ public class EX06 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
+        Scanner leer = new Scanner(System.in);
 
         System.out.print("Ingrese la cantidad de personas: ");
-        int n = sc.nextInt();
+        int n = leer.nextInt();
 
-        int personasDebajoDe160 = 0;
-        double sumaDeEstaturas = 0;
-        double sumaDeEstaturasDebajoDe160 = 0;
+        int personas160 = 0;
+        double sumaEstatura = 0;
+        double sumaEstatura160 = 0;
 
         for (int i = 1; i <= n; i++) {
+
             System.out.print("Ingrese la estatura de la persona #" + i + " en metros: ");
-            double estatura = sc.nextDouble();
-            sumaDeEstaturas += estatura;
+            double estatura = leer.nextDouble();
+
+            sumaEstatura += estatura;
 
             if (estatura < 1.60) {
-                personasDebajoDe160++;
-                sumaDeEstaturasDebajoDe160 += estatura;
+                sumaEstatura160 += estatura;
+                personas160++;
             }
         }
 
-        double promedioDeEstaturas = sumaDeEstaturas / n;
-        double promedioDeEstaturasDebajoDe160 = sumaDeEstaturasDebajoDe160 / personasDebajoDe160;
+        double promedioEstatura = sumaEstatura / n;
 
-        System.out.println("Promedio de estaturas en general: " + promedioDeEstaturas + " mts.");
-        System.out.println("Promedio de estaturas por debajo de 1.60 mts.: " + promedioDeEstaturasDebajoDe160 + " mts.");
+        System.out.println("Promedio de estaturas en general: " + String.format("%.2f", promedioEstatura) + " mts.");
 
-        sc.close();
+        if (personas160 > 0) {
+            double promedioEstatura160 = sumaEstatura160 / personas160;
+            System.out.println("Promedio de estaturas por debajo de 1,60 mts.: " + String.format("%.2f", promedioEstatura160) + " mts.");
+        } else {
+            System.out.println("No se encontraron personas con estaturas por debajo de 1.60 mts.");
+        }
     }
 
 }

@@ -25,7 +25,7 @@ public class E04 {
 
         Scanner leer = new Scanner(System.in);
 
-        System.out.print("Ingresar una frase o palabra: ");
+        System.out.print("Ingresar una frase o palabra que empiece por 'A': ");
         String frase = leer.nextLine();
 
         if (frase.substring(0, 1).equalsIgnoreCase("A")) {

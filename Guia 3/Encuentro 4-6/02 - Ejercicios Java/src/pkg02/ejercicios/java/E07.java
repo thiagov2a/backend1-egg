@@ -40,14 +40,14 @@ public class E07 {
         while (true) {
 
             System.out.print("Ingrese una cadena (&&&&& para salir): ");
-            cadena = leer.nextLine();
+            cadena = leer.nextLine().toUpperCase();
 
             if (cadena.equals("&&&&&")) {
                 break;
-            } else if (cadena.length() < 5 || !cadena.substring(0, 1).equals("X") || !cadena.substring(cadena.length() - 1).equals("O")) {
-                incorrectas++;
-            } else {
+            } else if (cadena.length() == 5 && cadena.charAt(0) == 'X' && cadena.charAt(cadena.length() - 1) == 'O') {
                 correctas++;
+            } else {
+                incorrectas++;
             }
         }
 
