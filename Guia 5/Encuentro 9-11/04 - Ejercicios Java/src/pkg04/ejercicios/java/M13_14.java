@@ -24,20 +24,20 @@ public class M13_14 {
      */
     public static void main(String[] args) {
 
-        Scanner leer = new Scanner(System.in);
         String[] equipo = new String[10];
 
-        llenarVector(leer, equipo);
+        llenarVector(equipo);
         mostrarVector(equipo);
     }
 
-    public static void llenarVector(Scanner leer, String equipo[]) {
+    public static void llenarVector(String equipo[]) {
+
+        Scanner leer = new Scanner(System.in);
 
         for (int i = 0; i < 10; i++) {
             System.out.print("Ingresar nombre N°" + (i + 1) + ": ");
             equipo[i] = leer.nextLine();
         }
-
     }
 
     public static void mostrarVector(String equipo[]) {
@@ -45,7 +45,6 @@ public class M13_14 {
         for (int i = 0; i < 10; i++) {
             System.out.println("Nombre N°" + (i + 1) + ": " + equipo[i]);
         }
-
     }
 
 }
