@@ -169,7 +169,7 @@ public class CadenaService {
                 case 7:
                     System.out.print("Ingresar letra.\n> ");
                     letraUsuario = input.next();
-                    System.out.println("¿Contiene la letra '" + letraUsuario + "'?" + contiene(c, letraUsuario));
+                    System.out.println("¿Contiene la letra '" + letraUsuario + "'? " + contiene(c, letraUsuario));
                     esperarTecla();
                     break;
                 case 8:
