@@ -18,30 +18,25 @@ public class CadenaService {
     Scanner input = new Scanner(System.in).useDelimiter("\n");
 
     public Cadena crearFrase() {
-        
-        limpiarPantalla();
-        
-        System.out.println("CREAR CADENA");
-        
-        System.out.print("Ingresar frase: ");
-        String frase = input.nextLine();
-        
-        esperarTecla();
 
+        limpiarPantalla();
+        System.out.print("CREAR CADENA\nIngresar frase.\n> ");
+        String frase = input.nextLine();
+        esperarTecla();
         return new Cadena(frase);
     }
 
     public void mostrarVocales(Cadena c) {
 
-        int cont = 0;
         String vocales = "AEIOUaeiou";
+        int cont = 0;
         for (int i = 0; i < c.getLongitud(); i++) {
             String letra = c.getFrase().substring(i, i + 1);
             if (vocales.contains(letra)) {
                 cont++;
             }
         }
-        System.out.println("Vocales contabilizadas: " + cont);
+        System.out.println("La frase contiene " + cont + " vocales.");
         esperarTecla();
     }
 
@@ -51,31 +46,31 @@ public class CadenaService {
         for (int i = c.getLongitud() - 1; i >= 0; i--) {
             fraseInvertida += c.getFrase().substring(i, i + 1);
         }
-        System.out.println("Frase normal: " + c.getFrase());
-        System.out.println("Frase invertida: " + fraseInvertida);
+        System.out.println("La frase invertida es: " + fraseInvertida + ".");
         esperarTecla();
     }
 
     public void vecesRepetido(Cadena c, String letraUsuario) {
 
-        letraUsuario = letraUsuario.toUpperCase();
         String frase = c.getFrase().toUpperCase();
         int cont = 0;
-        for (int i = 0; i < c.getLongitud(); i++) {
+        for (int i = 0; i < frase.length(); i++) {
             if (frase.substring(i, i + 1).contains(letraUsuario)) {
                 cont++;
             }
         }
-        System.out.println("El caracter '" + letraUsuario + "' se repite " + cont + " veces.");
+        System.out.println("El carácter '" + letraUsuario + "' se repite " + cont + " veces.");
         esperarTecla();
     }
 
     public void compararLongitud(Cadena c, String fraseUsuario) {
 
-        if (c.getLongitud() == fraseUsuario.length()) {
-            System.out.println("Las frases tienen la misma longitud.");
+        if (c.getLongitud() > fraseUsuario.length()) {
+            System.out.println("La frase '" + c.getFrase() + "' es más larga que la frase '" + fraseUsuario + "'.");
+        } else if (c.getLongitud() < fraseUsuario.length()) {
+            System.out.println("La frase '" + c.getFrase() + "' es más corta que la frase '" + fraseUsuario + "'.");
         } else {
-            System.out.println("Las frases no tienen la misma longitud.");
+            System.out.println("La frase '" + c.getFrase() + "' tiene la misma longitud que la frase '" + fraseUsuario + "'.");
         }
         esperarTecla();
     }
@@ -83,8 +78,8 @@ public class CadenaService {
     public void unirFrases(Cadena c, String fraseUsuario) {
 
         String frase = c.getFrase();
-        frase += fraseUsuario;
-        System.out.println("Frases unificadas: " + frase);
+        frase += " " + fraseUsuario;
+        System.out.println("La frase resultante es: " + frase + ".");
         esperarTecla();
     }
 
@@ -101,102 +96,102 @@ public class CadenaService {
                 fraseReemplazada += letra;
             }
         }
-        System.out.println(fraseReemplazada);
+        System.out.println("La frase resultante es: " + fraseReemplazada + ".");
         esperarTecla();
     }
-    
+
     public boolean contiene(Cadena c, String letraUsuario) {
-        
-        boolean contiene = false;
-        for (int i = 0; i < c.getLongitud(); i++) {
-            String letra = c.getFrase().substring(i, i + 1);
-            if (letraUsuario.contains(letra)) {
-                contiene = true;
-                break;
-            }
+
+        if (c.getFrase().contains(letraUsuario)) {
+            System.out.println("La frase contiene la letra '" + letraUsuario + "'.");
+            return true;
+        } else {
+            System.out.println("La frase no contiene la letra '" + letraUsuario + "'.");
+            return false;
         }
-        return contiene;
     }
-    
+
     public void mostrarMenu(Cadena c) {
-        
-        String fraseUsuario = "";
-        String letraUsuario = "";
+
+        String fraseUsuario;
         String salir = "";
         int opc;
 
         do {
+
             System.out.print("\nMENÚ\n"
-                    + "1. Mostrar vocales.\n"
-                    + "2. Invertir frase.\n"
-                    + "3. Veces repetido.\n"
-                    + "4. Comparar longitud.\n"
-                    + "5. Unir frases.\n"
-                    + "6. Reemplazar.\n"
-                    + "7. Contiene.\n"
-                    + "8. Salir.\n"
+                    + "1. Ingresar una nueva frase.\n"
+                    + "2. Mostrar vocales de la frase.\n"
+                    + "3. Invertir la frase.\n"
+                    + "4. Contar veces que se repite un carácter.\n"
+                    + "5. Comparar longitud con otra frase.\n"
+                    + "6. Unir con otra frase.\n"
+                    + "7. Reemplazar carácteres.\n"
+                    + "8. Comprobar si contiene una letra.\n"
+                    + "9. Salir.\n"
                     + "> ");
             opc = input.nextInt();
             limpiarPantalla();
 
             switch (opc) {
                 case 1:
-                    mostrarVocales(c);
-                    break;
-                case 2:
-                    invertirFrase(c);
-                    break;
-                case 3:
-                    System.out.print("Ingresar letra.\n> ");
-                    letraUsuario = input.next();
-                    vecesRepetido(c, letraUsuario);
-                    break;
-                case 4:
                     System.out.print("Ingresar frase.\n> ");
                     fraseUsuario = input.next();
-                    compararLongitud(c, fraseUsuario);
+                    c = new Cadena(fraseUsuario);
+                    break;
+                case 2:
+                    mostrarVocales(c);
+                    break;
+                case 3:
+                    invertirFrase(c);
+                    break;
+                case 4:
+                    System.out.print("Ingresar letra.\n> ");
+                    fraseUsuario = input.next();
+                    vecesRepetido(c, fraseUsuario.toUpperCase());
                     break;
                 case 5:
                     System.out.print("Ingresar frase.\n> ");
                     fraseUsuario = input.next();
-                    unirFrases(c, fraseUsuario);
+                    compararLongitud(c, fraseUsuario);
                     break;
                 case 6:
-                    System.out.print("Ingresar letra.\n> ");
-                    letraUsuario = input.next();
-                    reemplazar(c, letraUsuario);
+                    System.out.print("Ingresar frase.\n> ");
+                    fraseUsuario = input.next();
+                    unirFrases(c, fraseUsuario);
                     break;
                 case 7:
                     System.out.print("Ingresar letra.\n> ");
-                    letraUsuario = input.next();
-                    System.out.println("¿Contiene la letra '" + letraUsuario + "'? " + contiene(c, letraUsuario));
-                    esperarTecla();
+                    fraseUsuario = input.next();
+                    reemplazar(c, fraseUsuario);
                     break;
                 case 8:
-                    do {
-                        System.out.print("¿Esta seguro que desea salir? S/N\n> ");
-                        salir = input.next();
-                        if (salir.equalsIgnoreCase("S")) {
-                            limpiarPantalla();
-                            System.out.println("¡Hasta pronto!");
-                            break;
-                        } else if (salir.equalsIgnoreCase("N")) {
-                            limpiarPantalla();
-                            System.out.println("Volver al menú.");
-                            esperarTecla();
-                            break;
-                        } else {
-                            System.out.print("Opción no disponible. Intente nuevamente.\n> ");
-                        }
-                    } while (true);
+                    System.out.print("Ingresar letra.\n> ");
+                    fraseUsuario = input.next();
+                    contiene(c, fraseUsuario);
+                    break;
+                case 9:
+                    System.out.print("¿Está seguro que desea salir? S/N\n> ");
+                    salir = input.next();
+                    if (!salir.equalsIgnoreCase("S")) {
+                        limpiarPantalla();
+                        System.out.println("Volver al menú.");
+                        esperarTecla();
+                    }
                     break;
                 default:
-                    System.out.print("Opción no disponible. Intente nuevamente.\n> ");
+                    limpiarPantalla();
+                    System.out.println("Opción no disponible. Intente nuevamente.");
+                    esperarTecla();
                     break;
             }
+
         } while (!salir.equalsIgnoreCase("S"));
+
+        limpiarPantalla();
+        System.out.println("Gracias por usar el programa.");
     }
-    
+
     public void esperarTecla() {
 
         boolean esperandoEnter = true;
@@ -216,12 +211,12 @@ public class CadenaService {
             }
         }
     }
-    
+
     public void limpiarPantalla() {
 
         for (int i = 0; i < 50; i++) {
             System.out.println("");
         }
     }
-    
+
 }

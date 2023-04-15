@@ -19,7 +19,7 @@ public class Cadena {
 
     public Cadena(String frase) {
         this.frase = frase;
-        setLongitud(frase.length());
+        this.longitud = frase.length();
     }
 
     public String getFrase() {

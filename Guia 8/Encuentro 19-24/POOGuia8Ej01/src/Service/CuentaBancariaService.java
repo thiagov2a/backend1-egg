@@ -159,7 +159,7 @@ public class CuentaBancariaService {
                     break;
                 case 6:
                     do {
-                        System.out.print("¿Esta seguro que desea salir? S/N\n> ");
+                        System.out.print("¿Está seguro que desea salir? S/N\n> ");
                         salir = input.next();
                         if (salir.equalsIgnoreCase("S")) {
                             limpiarPantalla();

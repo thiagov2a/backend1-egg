@@ -7,7 +7,6 @@ package Main;
 
 import Entidades.Cafetera;
 import Service.CafeteraService;
-import java.util.Scanner;
 
 /**
  *
@@ -24,15 +23,15 @@ public class Main {
         Cafetera cafe1 = new Cafetera();
     }
     
-    public static void Menu() {
-        
-        Scanner input = new Scanner(System.in);
-        
-        cafeServicio.llenarCafetera(cafe1);
-        
-        System.out.println("");
-        int taza = input.nextInt();
-        cafeServicio.servirTaza(cafe1, taza);
-    }
+//    public static void Menu() { PASAR A SERVICE
+//        
+//        Scanner input = new Scanner(System.in);
+//        
+//        cafeServicio.llenarCafetera(cafe1);
+//        
+//        System.out.println("");
+//        int taza = input.nextInt();
+//        cafeServicio.servirTaza(cafe1, taza);
+//    }
 
 }
