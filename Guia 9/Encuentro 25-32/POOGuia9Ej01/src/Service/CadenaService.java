@@ -118,7 +118,7 @@ public class CadenaService {
         int opc;
 
         do {
-
+            
             System.out.print("\nMENÚ\n"
                     + "1. Ingresar una nueva frase.\n"
                     + "2. Mostrar vocales de la frase.\n"
@@ -131,13 +131,12 @@ public class CadenaService {
                     + "9. Salir.\n"
                     + "> ");
             opc = input.nextInt();
+            input.nextLine();
             limpiarPantalla();
 
             switch (opc) {
                 case 1:
-                    System.out.print("Ingresar frase.\n> ");
-                    fraseUsuario = input.next();
-                    c = new Cadena(fraseUsuario);
+                    c = crearFrase();
                     break;
                 case 2:
                     mostrarVocales(c);
@@ -185,7 +184,7 @@ public class CadenaService {
                     esperarTecla();
                     break;
             }
-
+            
         } while (!salir.equalsIgnoreCase("S"));
 
         limpiarPantalla();
