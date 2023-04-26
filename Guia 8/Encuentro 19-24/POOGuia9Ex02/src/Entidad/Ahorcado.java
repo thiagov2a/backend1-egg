@@ -39,6 +39,10 @@ public class Ahorcado {
     public void setPalabraBuscar(String[] palabraBuscar) {
         this.palabraBuscar = palabraBuscar;
     }
+    
+    public void setPalabraBuscar(int i) {
+        this.palabraBuscar[i] = "";
+    }
 
     public int getCantidadLetrasEncontradas() {
         return cantidadLetrasEncontradas;

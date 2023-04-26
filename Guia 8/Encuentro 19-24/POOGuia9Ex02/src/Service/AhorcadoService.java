@@ -23,7 +23,7 @@ public class AhorcadoService {
 
         limpiarPantalla();
 
-        System.out.print("Ingresar una palabra para jugar.\n> ");
+        System.out.print("AHORCADO\nIngresar una palabra para jugar.\n> ");
         String palabra = input.next();
 
         String[] vector = new String[palabra.length()];
@@ -33,15 +33,7 @@ public class AhorcadoService {
         ahorcado.setPalabraBuscar(vector);
 
         System.out.print("Ingresar cantidad de jugadas máximas.\n> ");
-        int num;
-        do {
-            while (!input.hasNextInt()) {
-                System.out.print("Por favor, ingrese un número entero positivo.\n> ");
-                input.next();
-            }
-            num = input.nextInt();
-            ahorcado.setCantidadJugadasMaximas(num);
-        } while (num <= 0);
+        ahorcado.setCantidadJugadasMaximas(input.nextInt());
 
         return ahorcado;
     }
@@ -54,7 +46,7 @@ public class AhorcadoService {
 
         boolean Esta = false;
         for (int i = 0; i < ahorcado.getPalabraBuscar().length; i++) {
-            if (ahorcado.getPalabraBuscar()[i].equals(letra)) {
+            if (ahorcado.getPalabraBuscar()[i].equalsIgnoreCase(letra)) {
                 Esta = true;
                 break;
             }
@@ -72,13 +64,15 @@ public class AhorcadoService {
 
         int cont = 0;
         for (int i = 0; i < ahorcado.getPalabraBuscar().length; i++) {
-            if (ahorcado.getPalabraBuscar()[i].equals(letra)) {
+            if (ahorcado.getPalabraBuscar()[i].equalsIgnoreCase(letra)) {
+                ahorcado.setPalabraBuscar(i);
                 cont++;
             }
         }
-        int encontradas = ahorcado.getCantidadLetrasEncontradas();
-        ahorcado.setCantidadLetrasEncontradas(encontradas + cont);
-        System.out.println("Número de letras (encontradas, faltantes): (" + ahorcado.getCantidadLetrasEncontradas() + "," + ahorcado.getPalabraBuscar().length + ")");
+        int encontradas = ahorcado.getCantidadLetrasEncontradas() + cont;
+        ahorcado.setCantidadLetrasEncontradas(encontradas);
+        int faltantes = ahorcado.getPalabraBuscar().length - encontradas;
+        System.out.println("Número de letras (encontradas, faltantes): (" + encontradas + "," + faltantes + ")");
         return cont != 0;
     }
 
@@ -96,13 +90,17 @@ public class AhorcadoService {
         do {
             limpiarPantalla();
 
-            System.out.print("Ingrese una letra:\n> ");
+            System.out.print("ADIVINE LA PALABRA\nIngrese una letra:\n> ");
             letra = input.next();
 
             longitud(ahorcado);
             buscar(ahorcado, letra);
             encontradas(ahorcado, letra);
             intentos(ahorcado);
+            
+            if (ahorcado.getPalabraBuscar().length == ahorcado.getCantidadLetrasEncontradas()) {
+                System.out.println("Mensaje: ¡Ganaste!");
+            }
 
             esperarTecla();
 
@@ -113,7 +111,7 @@ public class AhorcadoService {
 
         boolean esperandoEnter = true;
 
-        System.out.print("\nPresione Enter para continuar.\n");
+        System.out.print("\nPresione Enter para continuar...");
 
         while (esperandoEnter) {
             try {
