@@ -31,7 +31,7 @@ public class EstudianteService {
             System.out.print("Nota: ");
             estudiante.setNota(input.nextInt());
             while (estudiante.getNota() < 1 || estudiante.getNota() > 10) {
-                System.out.print("La nota debe se estar entre 1 y 10.\nNota: ");
+                System.out.print("La nota debe de estar entre 1 y 10 (incluidos).\nNota: ");
                 estudiante.setNota(input.nextInt());
             }
             System.out.println("");
