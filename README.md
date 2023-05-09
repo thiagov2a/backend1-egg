@@ -1,6 +1,6 @@
 # Backend 1
 
-Este es el repositorio del curso de EGG Backend 1, incluye varios ejercicios hechos a lo largo de los días.
+Este es el repositorio del curso de EGG Backend 1, incluye varios ejercicios hechos a lo largo de las clases.
 
 ## Autor
 
