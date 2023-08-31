@@ -6,4 +6,4 @@
   🔙 Java - Backend 1
 </h1>
 
-💾 Ejercicios de introducción a Java
+💾 Ejercicios prácticos de introducción a Java en el curso de FullStack de EGG con Argentina Programa 4.0
